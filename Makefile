@@ -7,8 +7,8 @@ run: build
 	./bin/app
 
 package:
-	shards build --release --link-flags="-L`pwd`/vendor"
-
+	shards build --release --link-flags="-rpath @executable_path/../Frameworks -L`pwd`/vendor"
+	
 inspect:
 	otool -L ./bin/app
 
